@@ -84,61 +84,75 @@ const ColorList = ({ colors, updateColors }) => {
 				))}
 			</ul>
 			{editing && (
-				<form onSubmit={saveEdit}>
-					<legend>edit color</legend>
-					<label>
-						color name:
-						<input
-							onChange={e =>
-								setColorToEdit({ ...colorToEdit, color: e.target.value })
-							}
-							value={colorToEdit.color}
-						/>
-					</label>
-					<label>
-						hex code:
-						<input
-							onChange={e =>
-								setColorToEdit({
-									...colorToEdit,
-									code: { hex: e.target.value }
-								})
-							}
-							value={colorToEdit.code.hex}
-						/>
-					</label>
-					<div className="button-row">
-						<button type="submit">save</button>
-						<button onClick={() => setEditing(false)}>cancel</button>
-					</div>
-				</form>
+				<>
+					<p className="edit-header">Edit Color</p>
+					<form onSubmit={saveEdit}>
+						<label>
+							color name:
+							<input
+								onChange={e =>
+									setColorToEdit({ ...colorToEdit, color: e.target.value })
+								}
+								value={colorToEdit.color}
+							/>
+						</label>
+						<label>
+							hex code:
+							<input
+								onChange={e =>
+									setColorToEdit({
+										...colorToEdit,
+										code: { hex: e.target.value }
+									})
+								}
+								value={colorToEdit.code.hex}
+							/>
+						</label>
+						<div className="button-row">
+							<button type="submit" className="form-button">
+								save
+							</button>
+							<button onClick={() => setEditing(false)} className="form-button">
+								cancel
+							</button>
+						</div>
+					</form>
+				</>
 			)}
 			{!editing && (
 				<div className="add-color">
-					<p>Add Color</p>
+					<p className="add-heading">Add Color</p>
 					<form onSubmit={addColor}>
-						<input
-							type="text"
-							name="color"
-							placeholder="Color Name"
-							value={colorToAdd.color}
-							onChange={e =>
-								setColorToAdd({ ...colorToAdd, color: e.target.value })
-							}
-						/>
-						<input
-							type="text"
-							name="code"
-							placeholder="Hex Code"
-							value={colorToAdd.code.hex}
-							onChange={e =>
-								setColorToAdd({
-									...colorToAdd,
-									code: { hex: e.target.value }
-								})
-							}
-						/>
-						<button type="submit">Add Color</button>
+						<label>
+							color name:
+							<input
+								type="text"
+								name="color"
+								placeholder="Color Name"
+								value={colorToAdd.color}
+								onChange={e =>
+									setColorToAdd({ ...colorToAdd, color: e.target.value })
+								}
+							/>
+						</label>
+						<label>
+							hex code:
+							<input
+								type="text"
+								name="code"
+								placeholder="Hex Code"
+								value={colorToAdd.code.hex}
+								onChange={e =>
+									setColorToAdd({
+										...colorToAdd,
+										code: { hex: e.target.value }
+									})
+								}
+							/>
+						</label>
+						<button type="submit" className="form-button">
+							Add Color
+						</button>
 					</form>
 				</div>
 			)}
