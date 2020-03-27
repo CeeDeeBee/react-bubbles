@@ -32,11 +32,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x] What steps can you take in your web apps to keep your data secure?
 
-  Using tokens or other authentication is a good way to ensure that only trusted sources can access data from a server. This security is more important to be implemented server side as client side authentication is very open to manipulation from a user who knows what they are doing. With this in mind web applications should be designed to hold all sensitive data on the server while preventing unauthenticated clients from reaching pages that display that data keeping in mind that private, client side, routes are more about improving the UX than security.
+  Using tokens or other authentication is a good way to ensure that only trusted sources can access data from a server. This security is more important to be implemented server side as client side authentication is very open to manipulation from a user who knows what they are doing. Applications should therefore be designed to hold all sensitive data on the server while preventing unauthenticated clients from reaching pages that display that data keeping in mind that private, client side, routes are more about improving the UX than security.
 
 - [x] Describe how web servers work.
 
-  Physical web servers are just computers with a publicly accessable ip address. They recieve http requests, typically over the world wide web, and have software, also called a web server, which responds to those requests with some response containing data. Everything that is used on the internet is somehow retrieved from a server with an http request from webpages, to api's to video.
+  Physical web servers are just computers with a publicly accessable ip address. They recieve http requests, typically over the world wide web, and have software, also called a web server, which responds to those requests with some response containing data. Essentially everything that is accessed on the internet is somehow retrieved from a server with an http request.
 
 - [x] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
